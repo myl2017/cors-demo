@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>tour</title>
+</head>
+<body>
+   <h3>Hi，欢迎来到 <span style="color: blue">旅游网</span>！</h3>
+   <script>
+       var request = new XMLHttpRequest()
+       request.onreadystatechange = function () {
+           var response = request.responseText;
+           if(response === ''){
+               console.log('啊，跨域失败！！！')
+           }else{
+               console.log('Hi，成功跨域获取到 tour_private 啦！！！')
+           }
+       }
+       request.open('MYL','http://localhost:80/json_private') //不写默认端口80
+       request.send()
+
+   </script>
+</body>
+</html>
